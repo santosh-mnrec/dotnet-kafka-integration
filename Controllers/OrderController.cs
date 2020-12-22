@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 namespace dotnet_kafka_integration.Controllers
 {
+     [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
         private readonly ProducerConfig config;

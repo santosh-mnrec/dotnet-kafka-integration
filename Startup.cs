@@ -31,6 +31,8 @@ namespace dotnet_kafka_integration
 
             services.AddSingleton<ProducerConfig>(producerConfig);
             services.AddSingleton<ConsumerConfig>(consumerConfig);
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,10 +47,8 @@ namespace dotnet_kafka_integration
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
         }
     }
