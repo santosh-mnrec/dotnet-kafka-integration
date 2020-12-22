@@ -1,4 +1,4 @@
-namespace dotnet_kafka_integration.Model
+namespace Dotnet.Kafka.Integration.Model
 {
     public class Product
     {

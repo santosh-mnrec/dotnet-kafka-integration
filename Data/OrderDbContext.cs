@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using dotnet_kafka_integration.Model;
+using Dotnet.Kafka.Integration.Model;
 using Microsoft.EntityFrameworkCore;
-namespace dotnet_kafka_integration
+namespace Dotnet.Kafka.Integration
 {
 
     public class OrderDbContext : DbContext

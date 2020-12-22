@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using dotnet_kafka_integration;
+using Dotnet.Kafka.Integration;
 
-namespace dotnet_kafka_integration.Migrations
+namespace Dotnet.Kafka.Integration.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
     [Migration("20201222092454_InitialCreate")]
@@ -17,7 +17,7 @@ namespace dotnet_kafka_integration.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("dotnet_kafka_integration.Model.Product", b =>
+            modelBuilder.Entity("Dotnet.Kafka.Integration.Model.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,7 @@ namespace dotnet_kafka_integration.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("dotnet_kafka_integration.OrderRequest", b =>
+            modelBuilder.Entity("Dotnet.Kafka.Integration.OrderRequest", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()

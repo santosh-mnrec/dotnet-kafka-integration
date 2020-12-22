@@ -4,7 +4,7 @@ using System;
 using System.Threading.Tasks;
 using Confluent.Kafka;
 
-namespace dotnet_kafka_integration
+namespace Dotnet.Kafka.Integration
 {
 
     public class ProducerService

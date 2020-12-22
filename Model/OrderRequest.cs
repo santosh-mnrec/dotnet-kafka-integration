@@ -1,6 +1,6 @@
 
 
-namespace  dotnet_kafka_integration
+namespace  Dotnet.Kafka.Integration
 {
      public class OrderRequest
     {

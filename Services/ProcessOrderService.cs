@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace dotnet_kafka_integration
+namespace Dotnet.Kafka.Integration
 {
 
     public class ProcessOrderService : IHostedService

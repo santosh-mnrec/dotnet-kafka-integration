@@ -3,7 +3,7 @@
 using System;
 using Confluent.Kafka;
 
-namespace dotnet_kafka_integration
+namespace Dotnet.Kafka.Integration
 {
 
     public class ConsumerService

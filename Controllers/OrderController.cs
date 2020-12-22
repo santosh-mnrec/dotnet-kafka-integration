@@ -4,7 +4,7 @@ using Confluent.Kafka;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace dotnet_kafka_integration.Controllers
+namespace Dotnet.Kafka.Integration.Controllers
 {
      [Route("api/[controller]")]
     public class OrderController : ControllerBase

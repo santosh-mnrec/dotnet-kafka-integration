@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace dotnet_kafka_integration
+namespace Dotnet.Kafka.Integration
 {
     public class Startup
     {

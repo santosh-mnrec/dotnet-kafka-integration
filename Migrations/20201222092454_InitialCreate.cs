@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace dotnet_kafka_integration.Migrations
+namespace Dotnet.Kafka.Integration.Migrations
 {
     public partial class InitialCreate : Migration
     {
