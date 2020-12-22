@@ -47,7 +47,7 @@ namespace dotnet_kafka_integration
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            //_producer?.Dispose();
+           
             return Task.CompletedTask;
         }
 
