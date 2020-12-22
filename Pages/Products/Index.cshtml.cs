@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Dotnet.Kafka.Integration;
 using Dotnet.Kafka.Integration.Model;
 
-namespace Dotnet.Kafka.Integration.Pages
+namespace Dotnet.Kafka.Integration.Pages.Products
 {
     public class IndexModel : PageModel
     {

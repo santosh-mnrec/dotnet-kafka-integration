@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Confluent.Kafka;
+using Dotnet.Kafka.Integration.Model;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 

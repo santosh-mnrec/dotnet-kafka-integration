@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Dotnet.Kafka.Integration;
 using Dotnet.Kafka.Integration.Model;
 
-namespace Dotnet.Kafka.Integration.Pages.Product
+namespace Dotnet.Kafka.Integration.Pages.Products
 {
     public class EditModel : PageModel
     {

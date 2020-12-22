@@ -8,18 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using Dotnet.Kafka.Integration;
 using Dotnet.Kafka.Integration.Model;
 
-namespace Dotnet.Kafka.Integration.Pages.Product
+namespace Dotnet.Kafka.Integration.Pages.Products
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly Dotnet.Kafka.Integration.OrderDbContext _context;
 
-        public DeleteModel(Dotnet.Kafka.Integration.OrderDbContext context)
+        public DetailsModel(Dotnet.Kafka.Integration.OrderDbContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public Product Product { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -36,24 +35,6 @@ namespace Dotnet.Kafka.Integration.Pages.Product
                 return NotFound();
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Product = await _context.Product.FindAsync(id);
-
-            if (Product != null)
-            {
-                _context.Product.Remove(Product);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

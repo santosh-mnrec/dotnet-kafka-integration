@@ -32,6 +32,8 @@ namespace Dotnet.Kafka.Integration
             services.AddSingleton<ProducerConfig>(producerConfig);
             services.AddSingleton<ConsumerConfig>(consumerConfig);
             services.AddControllersWithViews();
+            services.AddDbContext<OrderDbContext>()
+               .AddEntityFrameworkSqlite();
             services.AddRazorPages();
         }
 
