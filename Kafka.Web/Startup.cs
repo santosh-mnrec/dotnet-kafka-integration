@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Confluent.Kafka;
+using Dotnet.Kafka.Integration.Data;
+using Dotnet.Kafka.Integration.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,11 +26,18 @@ namespace Dotnet.Kafka.Integration
             Configuration.Bind("producer", producerConfig);
             Configuration.Bind("consumer", consumerConfig);
 
-            services.AddSingleton<ProducerConfig>(producerConfig);
-            services.AddSingleton<ConsumerConfig>(consumerConfig);
-            services.AddControllersWithViews();
+            services.AddSingleton(producerConfig);
+            services.AddSingleton(consumerConfig);
+
             services.AddDbContext<OrderDbContext>()
-               .AddEntityFrameworkSqlite();
+             .AddEntityFrameworkSqlite();
+
+            services.AddScoped<IRepository<Product>, Repository<Product>>();
+         
+           
+
+            services.AddControllersWithViews();
+          
             services.AddRazorPages();
         }
 

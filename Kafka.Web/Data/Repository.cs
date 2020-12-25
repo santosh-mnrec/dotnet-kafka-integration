@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 namespace Dotnet.Kafka.Integration.Data
 {
 
-    public class ObjectBase
-    {
-        public int Id { get; set; }
-
-    }
-    public class Repository<T> : IRepository<T> where T : ObjectBase
+   
+    public class Repository<T> : IRepository<T> where T : class
     {
         private OrderDbContext _context = null;
         private DbSet<T> table = null;
