@@ -1,8 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using Confluent.Kafka;
+using Domain.Kafka;
 using Dotnet.Kafka.Integration.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace Dotnet.Kafka.Integration.Controllers
@@ -10,10 +12,10 @@ namespace Dotnet.Kafka.Integration.Controllers
      [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly ProducerConfig config;
-        public OrderController(ProducerConfig config)
+        private readonly KafkaService _kafkaService;
+        public OrderController(IConfiguration configuration)
         {
-            this.config = config;
+            _kafkaService = new KafkaService(configuration);
 
         }
         // POST api/values
@@ -33,8 +35,7 @@ namespace Dotnet.Kafka.Integration.Controllers
             Console.WriteLine(serializedOrder);
             Console.WriteLine("=========");
 
-            var producer = new ProducerService(this.config, "orderrequests");
-            await producer.writeMessage(serializedOrder);
+            await _kafkaService.Publish("ValidatedOrders", serializedOrder);
 
             return Created("TransactionId", "Your order is in progress");
         }
